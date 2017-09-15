@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Item.associate = function(models){
-    
+    Item.hasMany(models.SupplierItem, {foreignKey: 'ItemId'})
+    Item.belongsToMany(models.Suppliers, {through: models.SupplierItem})
   }
 
   return Item;

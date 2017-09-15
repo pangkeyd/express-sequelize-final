@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+  <title><%= title %></title>
 </head>
 <body>
 
@@ -17,13 +17,29 @@
       <th>Codeitem</th>
       <th>Action</th>
     </thead>
+    <% var i = 1
+      data.forEach(function(r){ %>
     <tbody>
+      <td><%= i %></td>
+      <td><%= r.name %></td>
+      <td><%= r.brand %></td>
+      <td><%= r.codeitem %></td>
+      <td>
+        <a href="/item/edit/<%= r.id %>">Edit</a>
+        <a href="/item/delete/<%= r.id %>">Delete</a>
+      </td>
     </tbody>
+    <% i++ }) %>
   </table>
 
   <br>
 
   <a href="/item/tambah"> Tambah Item </a>
+
+  <br>
+  <br>
+
+  <a href="/"> << kembali ke halaman utama </a>
 
 </body>
 </html>

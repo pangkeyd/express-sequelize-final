@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %></title>
+</head>
+<body>
+
+  <h3>Tambah Data Item</h3>
+
+  <form class="" id="itemForm" action="/item/tambah" method="post">
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" name="name" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>Brand</td>
+        <td>
+          <input type="text" name="brand" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>Codeitem</td>
+        <td>
+          <input type="text" name="codeitem" id="codeitem" value="">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p id="err" style="color:red; font-size:14px"></p></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="Simpan">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <br>
+
+  <a href="/item"> << kembali ke halaman item </a>
+
+  <script>
+
+    var itemForm = document.getElementById('itemForm')
+    itemForm.addEventListener('input', function(){
+      var codeitem = document.getElementById('codeitem').value
+      var err = document.getElementById('err')
+      // var reg = '/(HP|SW|LP)\d+/'
+      // if(codeitem !== reg){
+      //   err.innerHTML = 'Salah'
+      // }else{
+        // if(codeitem[0][0] && codeitem[0][1] !== 'HP' || codeitem[0][0] && codeitem[0][1] !== 'SW' || codeitem[0][0] && codeitem[0][1] !== 'LP'){
+        //   err.innerHTML = 'Salah'
+        // }
+        // console.log(codeitem[0[1]]);
+        // if(codeitem.length < 6){
+        //   err.innerHTML = 'Inputan harus 6 karakter'
+        // }else{
+        //   err.innerHTML = 'Yeah Kamu Manusia'
+        //   err.style.color = 'green'
+        // }
+      // }
+      // for(var i = 0; i < codeitem.length; i++){
+      //   if(codeitem[i][0] !== 'H' && codeitem[i][1] !== 'P'){
+      //
+      //   }
+      // }
+    })
+
+  </script>
+</body>
+</html>
