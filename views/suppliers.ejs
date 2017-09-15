@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h3>Data Suppliers</h3>
+  <table border="1" cellpadding="5">
+    <thead>
+      <th>No</th>
+      <th>Nama</th>
+      <th>Kota</th>
+      <th>Action</th>
+    </thead>
+    <% var i = 1
+      data.forEach(function(r){ %>
+    <tbody>
+      <td><%= i %></td>
+      <td><%= r.name %></td>
+      <td><%= r.kota %></td>
+      <td>
+        <a href="/suppliers/edit/<%= r.id %>">Edit</a>
+        <a href="/suppliers/delete/<%= r.id %>">Delete</a>
+      </td>
+    </tbody>
+    <% i++ }) %>
+  </table>
+
+  <br>
+
+  <a href="/suppliers/tambah">Tambah Suppliers</a>
+
+  <br>
+  <br>
+
+  <a href="/"> << kembali ke halaman utama </a>
+
+</body>
+</html>
