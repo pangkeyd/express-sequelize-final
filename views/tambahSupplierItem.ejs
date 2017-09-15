@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %></title>
+</head>
+<body>
+
+  <h3>Tambah Data</h3>
+  <form action="/supplieritem/tambah" method="post">
+    <table>
+      <tr>
+        <td>Supplier :</td>
+        <td>
+          <select class="" name="supp">
+            <option value=""> - choose - </option>
+            <% data.forEach(function(r){ %>
+              <option value="<%= r.id %>"><%= r.name %></option>
+            <% }) %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Item :</td>
+        <td>
+          <select class="" name="item">
+            <option value=""> - choose - </option>
+            <% dataItem.forEach(function(r){ %>
+              <option value="<%= r.id %>"><%= r.name %></option>
+            <% }) %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Price :</td>
+        <td>
+          <input type="number" name="price" value="">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" name="" value="Simpan">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <br>
+
+  <a href="/supplieritem"> << kembali ke halaman sebelumnya </a>
+
+</body>
+</html>

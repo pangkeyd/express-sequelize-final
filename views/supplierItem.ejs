@@ -19,10 +19,27 @@
       <th>Add Item</th>
       <th>Action</th>
     </thead>
+    <% var i = 1
+      data.forEach(function(r){ %>
     <tbody>
-
+      <td><%= i %></td>
+      <td><%= r.Supplier.name %></td>
+      <td><%= r.Supplier.kota %></td>
+      <td><%= r.Supplier.Items[0].name %></td>
+      <td>
+        <a href="/assignitem">Assign Item</a>
+      </td>
+      <td>
+        <a href="/supplieritem/edit/<%= r.id %>">Edit</a>
+        <a href="/supplieritem/delete/<%= r.id %>">Delete</a>
+      </td>
     </tbody>
+    <% i++ }) %>
   </table>
+
+  <br>
+
+  <a href="/supplieritem/tambah">Tambah Supplier</a>
 
 </body>
 </html>
